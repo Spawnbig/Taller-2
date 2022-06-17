@@ -33,9 +33,6 @@ export default{
 
 
 <style>
-.celda{
-  outline: black solid 1px ;
-}
 .parent {
 display: grid;
 grid-template-columns: repeat(3, 100px);

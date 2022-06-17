@@ -34,7 +34,7 @@ export default{
 
 <style>
 .celda{
-  outline: black solid 1px ;
+  outline-color: black solid 20px ;
 }
 .parent {
 display: grid;
