@@ -1,15 +1,14 @@
 <template>
-
-<div class="parent text-center align-middle">  
-<div class="text-center align-middle" >X </div>
-<div class="text-center align-middle">X </div>
-<div class="text-center align-middle">X </div>
-<div class="text-center align-middle">X </div>
-<div class="text-center align-middle">X </div>
-<div class="text-center align-middle">X </div>
-<div class="text-center align-middle">X </div>
-<div class="text-center align-middle">X </div>
-<div class="text-center align-middle">X </div>
+<div class="parent">
+<div class="div1"> </div>
+<div class="div2"> </div>
+<div class="div3"> </div>
+<div class="div4"> </div>
+<div class="div5"> </div>
+<div class="div6"> </div>
+<div class="div7"> </div>
+<div class="div8"> </div>
+<div class="div9"> </div>
 </div> 
 </template>
 
@@ -38,11 +37,10 @@ export default{
 <style>
 .parent {
 display: grid;
-grid-template-columns: repeat(3, 100px);
-grid-template-rows: repeat(3, 100px);
+grid-template-columns: repeat(3, 1fr);
+grid-template-rows: repeat(3, 1fr);
 grid-column-gap: 0px;
 grid-row-gap: 0px;
-text-align: center;
 }
 
 .div1 { grid-area: 1 / 1 / 2 / 2; }

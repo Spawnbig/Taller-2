@@ -1,15 +1,15 @@
 <template>
 
-<div class="parent text-center align-middle">  
-<div class="text-center align-middle" >X </div>
-<div class="text-center align-middle">X </div>
-<div class="text-center align-middle">X </div>
-<div class="text-center align-middle">X </div>
-<div class="text-center align-middle">X </div>
-<div class="text-center align-middle">X </div>
-<div class="text-center align-middle">X </div>
-<div class="text-center align-middle">X </div>
-<div class="text-center align-middle">X </div>
+ <div class="parent">
+<div class="div1">X </div>
+<div class="div2">X </div>
+<div class="div3">X </div>
+<div class="div4">X </div>
+<div class="div5">X </div>
+<div class="div6">X </div>
+<div class="div7">X </div>
+<div class="div8">X </div>
+<div class="div9">X </div>
 </div> 
 </template>
 
@@ -42,7 +42,7 @@ grid-template-columns: repeat(3, 100px);
 grid-template-rows: repeat(3, 100px);
 grid-column-gap: 0px;
 grid-row-gap: 0px;
-text-align: center;
+text-center;
 }
 
 .div1 { grid-area: 1 / 1 / 2 / 2; }

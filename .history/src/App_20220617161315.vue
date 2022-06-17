@@ -42,7 +42,7 @@ grid-template-columns: repeat(3, 100px);
 grid-template-rows: repeat(3, 100px);
 grid-column-gap: 0px;
 grid-row-gap: 0px;
-text-align: center;
+
 }
 
 .div1 { grid-area: 1 / 1 / 2 / 2; }
