@@ -12,6 +12,7 @@
 <div class="div8 celda" v-on:click="play(2,1)">{{gato.juego[2][1]}}</div>
 <div class="div9 celda" v-on:click="play(2,2)">{{gato.juego[2][2]}}</div>
 </div> 
+<h1 v-if="ganador" class="text-center">GANADOR JUGADOR {{this.jugadorGanador}}</h1>
 </template>
 
 <script>
@@ -22,15 +23,48 @@ export default{
   data(){
     return {
       currentPlayer: 'X',
-      gato : useGatoStore()
+      gato : useGatoStore(),
+      ganador : false,
+      jugadorGanador : ''
     }
   },
   methods:{
     play(fil,col){
-      if(!this.gato.juegoPlayed[fil][col]){
+      if(!this.gato.juegoPlayed[fil][col] && !this.ganador){
         this.gato.juego[fil][col] = this.currentPlayer; 
-        this.gato.juegoPlayed[fil][col] = true
-        this.currentPlayer = (this.currentPlayer == 'X') ? 'O' : 'X'
+        this.gato.juegoPlayed[fil][col] = true;
+        this.verificarGanador();
+        this.currentPlayer = (this.currentPlayer == 'X') ? 'O' : 'X';
+      }
+    },
+    verificarGanador(){
+      this.verificarHorizontalVertical()
+      this.verificarDiagonales()
+    },
+    verificarHorizontalVertical(){
+      for(let i = 0; i < 3; i++){
+        if ((this.gato.juego[i][0] == this.currentPlayer) && 
+        (this.gato.juego[i][1] == this.currentPlayer) && (this.gato.juego[i][2] == this.currentPlayer)  ){
+          this.ganador = true
+          this.jugadorGanador = this.currentPlayer
+        }
+        if ((this.gato.juego[0][i] == this.currentPlayer) && 
+        (this.gato.juego[1][i] == this.currentPlayer) && (this.gato.juego[2][i] == this.currentPlayer)  ){
+          this.ganador = true
+          this.jugadorGanador = this.currentPlayer
+        }
+      }
+    },
+    verificarDiagonales(){
+      if ((this.gato.juego[0][0] == this.currentPlayer) && 
+        (this.gato.juego[1][1] == this.currentPlayer) && (this.gato.juego[2][2] == this.currentPlayer)  ){
+          this.ganador = true
+          this.jugadorGanador = this.currentPlayer
+      }
+      if ((this.gato.juego[0][2] == this.currentPlayer) && 
+        (this.gato.juego[1][1] == this.currentPlayer) && (this.gato.juego[2][0] == this.currentPlayer)  ){
+          this.ganador = true
+          this.jugadorGanador = this.currentPlayer
       }
     }
   }
