@@ -1,14 +1,16 @@
 <template>
+
+<h1 class="text-center">Jugador Actual : {{currentPlayer}}</h1>
 <div class="parent">  
-<div class="div1 celda text-center align-middle" v-on:click="printTable()">{{gato.juego[0][0]}}</div>
-<div class="div2 celda text-center align-middle" v-on:click="printTable()">{{gato.juego[0][1]}}</div>
-<div class="div3 celda text-center align-middle" v-on:click="printTable()">{{gato.juego[0][2]}}</div>
-<div class="div4 celda text-center align-middle" v-on:click="printTable()">{{gato.juego[1][0]}}</div>
-<div class="div5 celda text-center align-middle" v-on:click="printTable()">{{gato.juego[1][1]}}</div>
-<div class="div6 celda text-center align-middle" v-on:click="printTable()">{{gato.juego[1][2]}}</div>
-<div class="div7 celda text-center align-middle" v-on:click="printTable()">{{gato.juego[2][0]}}</div>
-<div class="div8 celda text-center align-middle" v-on:click="printTable()">{{gato.juego[2][1]}}</div>
-<div class="div9 celda text-center align-middle" v-on:click="printTable()">{{gato.juego[2][2]}}</div>
+<div class="div1 celda" v-on:click="play(0,0)">{{gato.juego[0][0]}}</div>
+<div class="div2 celda" v-on:click="play(0,1)">{{gato.juego[0][1]}}</div>
+<div class="div3 celda" v-on:click="play(0,2)">{{gato.juego[0][2]}}</div>
+<div class="div4 celda" v-on:click="play(1,0)">{{gato.juego[1][0]}}</div>
+<div class="div5 celda" v-on:click="play(1,1)">{{gato.juego[1][1]}}</div>
+<div class="div6 celda" v-on:click="play(1,2)">{{gato.juego[1][2]}}</div>
+<div class="div7 celda" v-on:click="play(2,0)">{{gato.juego[2][0]}}</div>
+<div class="div8 celda" v-on:click="play(2,1)">{{gato.juego[2][1]}}</div>
+<div class="div9 celda" v-on:click="play(2,2)">{{gato.juego[2][2]}}</div>
 </div> 
 </template>
 
@@ -24,8 +26,12 @@ export default{
     }
   },
   methods:{
-    printTable(){
-      console.log(this.gato.juego)
+    play(fil,col){
+      if(!this.gato.juegoPlayed[fil][col]){
+        this.gato.juego[fil][col] = this.currentPlayer; 
+        this.gato.juegoPlayed[fil][col] = true
+        this.currentPlayer = (this.currentPlayer == 'X') ? 'O' : 'X'
+      }
     }
   }
 }
@@ -34,7 +40,8 @@ export default{
 
 <style>
 .celda{
-  outline: black solid 1px ;
+  outline: black solid 1px;
+  vertical-align: middle;
 }
 .parent {
 display: grid;
@@ -43,6 +50,7 @@ grid-template-rows: repeat(3, 100px);
 grid-column-gap: 0px;
 grid-row-gap: 0px;
 text-align: center;
+padding-left: 42%;
 }
 
 .div1 { grid-area: 1 / 1 / 2 / 2; }
