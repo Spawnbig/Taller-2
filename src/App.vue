@@ -13,8 +13,9 @@
 <div class="div9 celda" v-on:click="play(2,2)">{{gato.juego[2][2]}}</div>
 </div> 
 <div class="container-btn">
+  <h1 v-if="empate" class="text-center mt-4">Empate</h1>
   <h1 v-if="ganador" class="text-center mt-4">GANADOR JUGADOR {{this.jugadorGanador}}</h1>
-  <button v-if="ganador || empate" @click="reload()" type="button" class="btn btn-warning mt-4">Reset</button>
+  <button v-if="ganador || empate" @click="reload()" type="button" class="btn btn-info">Reset</button>
 </div>
 
 </template>
@@ -95,15 +96,15 @@ export default{
 <style>
 
 #app {
-  background-color: black;
+  background:#FFAD41;
 }
 html {
-  background-color: red;
+   background:#FFAD41;
 }
 
 .celda{
-  outline: black solid 1px;
-  vertical-align: middle;
+  outline: black solid 2px;
+
 }
 .parent {
 display: grid;
@@ -112,53 +113,20 @@ grid-template-rows: repeat(3, 100px);
 grid-column-gap: 0px;
 grid-row-gap: 0px;
 text-align: center;
-padding-left: 42%;
+padding-left: 40%;
 }
 
-.div1 { grid-area: 1 / 1 / 2 / 2; }
-.div2 { grid-area: 1 / 2 / 2 / 3; }
-.div3 { grid-area: 1 / 3 / 2 / 4; }
-.div4 { grid-area: 2 / 1 / 3 / 2; }
-.div5 { grid-area: 2 / 2 / 3 / 3; }
-.div6 { grid-area: 2 / 3 / 3 / 4; }
-.div7 { grid-area: 3 / 1 / 4 / 2; }
-.div8 { grid-area: 3 / 2 / 4 / 3; }
-.div9 { grid-area: 3 / 3 / 4 / 4; } 
+.div1 {background: #40B4C6; grid-area: 1 / 1 / 2 / 2; }
+.div2 {background: #40B4C6; grid-area: 1 / 2 / 2 / 3; }
+.div3 { background: #40B4C6;grid-area: 1 / 3 / 2 / 4; }
+.div4 { background: #40B4C6;grid-area: 2 / 1 / 3 / 2; }
+.div5 {background: #40B4C6; grid-area: 2 / 2 / 3 / 3; }
+.div6 {background: #40B4C6;grid-area: 2 / 3 / 3 / 4; }
+.div7 {background: #40B4C6; grid-area: 3 / 1 / 4 / 2; }
+.div8 {background: #40B4C6; grid-area: 3 / 2 / 4 / 3; }
+.div9 {background: #40B4C6; grid-area: 3 / 3 / 4 / 4; } 
 
-.btn-reset {
-   background: #DFF63D;
-   background-image: -webkit-linear-gradient(top, #DFF63D, #7FD01E);
-   background-image: -moz-linear-gradient(top, #DFF63D, #7FD01E);
-   background-image: -ms-linear-gradient(top, #DFF63D, #7FD01E);
-   background-image: -o-linear-gradient(top, #DFF63D, #7FD01E);
-   background-image: -webkit-gradient(to bottom, #DFF63D, #7FD01E);
-   -webkit-border-radius: 20px;
-   -moz-border-radius: 20px;
-   border-radius: 20px;
-   color: #ED097F;
-   font-family: Arial;
-   font-size: 40px;
-   font-weight: 100;
-   padding: 40px;
-   text-decoration: none;
-   display: inline-block;
-   cursor: pointer;
-   text-align: center;
-}
 
-.btn-reset:hover {
-   border: solid #0059A0 1px;
-   background: #1E62D0;
-   background-image: -webkit-linear-gradient(top, #1E62D0, #3D94F6);
-   background-image: -moz-linear-gradient(top, #1E62D0, #3D94F6);
-   background-image: -ms-linear-gradient(top, #1E62D0, #3D94F6);
-   background-image: -o-linear-gradient(top, #1E62D0, #3D94F6);
-   background-image: -webkit-gradient(to bottom, #1E62D0, #3D94F6);
-   -webkit-border-radius: 20px;
-   -moz-border-radius: 20px;
-   border-radius: 20px;
-   text-decoration: none;
-}
 .container-btn{
   text-align: center;
 }
