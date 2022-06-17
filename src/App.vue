@@ -1,15 +1,14 @@
 <template>
-
-<div class="parent text-center align-middle">  
-<div class="text-center align-middle" >X </div>
-<div class="text-center align-middle">X </div>
-<div class="text-center align-middle">X </div>
-<div class="text-center align-middle">X </div>
-<div class="text-center align-middle">X </div>
-<div class="text-center align-middle">X </div>
-<div class="text-center align-middle">X </div>
-<div class="text-center align-middle">X </div>
-<div class="text-center align-middle">X </div>
+<div class="parent">  
+<div class="div1 text-center align-middle" v-on:click="printTable()">{{gato.juego[0][0]}}</div>
+<div class="div2 text-center align-middle" v-on:click="printTable()">{{gato.juego[0][1]}}</div>
+<div class="div3 text-center align-middle" v-on:click="printTable()">{{gato.juego[0][2]}}</div>
+<div class="div4 text-center align-middle" v-on:click="printTable()">{{gato.juego[1][0]}}</div>
+<div class="div5 text-center align-middle" v-on:click="printTable()">{{gato.juego[1][1]}}</div>
+<div class="div6 text-center align-middle" v-on:click="printTable()">{{gato.juego[1][2]}}</div>
+<div class="div7 text-center align-middle" v-on:click="printTable()">{{gato.juego[2][0]}}</div>
+<div class="div8 text-center align-middle" v-on:click="printTable()">{{gato.juego[2][1]}}</div>
+<div class="div9 text-center align-middle" v-on:click="printTable()">{{gato.juego[2][2]}}</div>
 </div> 
 </template>
 
@@ -20,12 +19,10 @@ export default{
 
   data(){
     return {
+      currentPlayer: 'X',
       gato : useGatoStore()
     }
   },
-  mounted(){
-    this.printTable()
-  }, 
   methods:{
     printTable(){
       console.log(this.gato.juego)
