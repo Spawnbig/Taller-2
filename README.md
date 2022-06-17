@@ -1,5 +1,10 @@
 # taller-2
 
+Integrantes: 
+- Rafael Mella
+- Roberto Rubilar
+- Nicolas Sanhueza
+
 ## Project setup
 ```
 npm install
