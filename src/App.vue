@@ -13,7 +13,7 @@
 <div class="div9 celda" v-on:click="play(2,2)">{{gato.juego[2][2]}}</div>
 </div> 
 <div class="container-btn">
-  <h1 v-if="empate" class="text-center mt-4">Empate</h1>
+  <h1 v-if="empate && !ganador" class="text-center mt-4">Empate</h1>
   <h1 v-if="ganador" class="text-center mt-4">GANADOR JUGADOR {{this.jugadorGanador}}</h1>
   <button v-if="ganador || empate" @click="reload()" type="button" class="btn btn-info">Reset</button>
 </div>
@@ -94,6 +94,7 @@ export default{
 
 
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&display=swap');
 
 #app {
   background:#FFAD41;
@@ -103,7 +104,16 @@ html {
 }
 
 .celda{
+  font-family: 'Roboto Slab', serif;
+  font-weight: bolder;
   outline: black solid 2px;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+}
+
+.celda:hover{
+background-color: #236b76;
 
 }
 .parent {
@@ -128,6 +138,7 @@ padding-left: 40%;
 
 
 .container-btn{
+  font-family: 'Roboto Slab', serif;
   text-align: center;
 }
 
